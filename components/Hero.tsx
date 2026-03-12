@@ -1,32 +1,14 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { Terminal } from '@/components/ui/terminal'
 
 export default function Hero() {
-  const cardRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      if (!cardRef.current) return
-      const { clientX, clientY } = e
-      const x = (clientX / window.innerWidth - 0.5) * 12
-      const y = (clientY / window.innerHeight - 0.5) * 12
-      cardRef.current.style.transform = `translate(${x}px, ${y}px)`
-    }
-    window.addEventListener('mousemove', onMouseMove)
-    return () => window.removeEventListener('mousemove', onMouseMove)
-  }, [])
-
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-      {/* Background decorative text */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-0 text-[clamp(120px,18vw,220px)] font-display font-bold leading-none text-black/[0.03] select-none pointer-events-none whitespace-nowrap">
-        CODE
-      </div>
+    <section className="relative  min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <div className="max-w-7xl  mx-auto px-6 md:px-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 items-center">
           {/* Left content */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-6 ">
             {/* Status badge */}
             <div className="animate-fade-up flex items-center gap-2 mb-10">
               <span className="relative flex h-2 w-2">
@@ -69,58 +51,45 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Profile Card */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div ref={cardRef} className="relative transition-transform duration-100 ease-out">
-              {/* Available badge */}
-              <div className="absolute -top-3 -right-3 z-10 bg-[#C8FF00] text-charcoal text-[10px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full rotate-12 shadow-lg">
-                Open to work
-              </div>
-
-              {/* Profile card */}
-              <div className="animate-fade-up-delay-3 w-[260px] h-[320px] md:w-[300px] md:h-[370px] rounded-2xl overflow-hidden bg-charcoal/10 relative">
-                <div className="w-full h-full bg-gradient-to-b from-charcoal/20 to-charcoal/60 flex flex-col items-start justify-end p-6">
-                  {/* Terminal-style decorative element */}
-                  <div className="absolute top-5 left-5 right-5">
-                    <div className="flex items-center gap-1.5 mb-3">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/60"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></span>
-                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/60"></span>
-                    </div>
-                    <div className="font-mono text-[11px] text-cream/25 space-y-1.5">
-                      <p><span className="text-[#C8FF00]/60">const</span> engineer = {'{'}</p>
-                      <p className="pl-3"><span className="text-[#C8FF00]/40">name</span>: <span className="text-cream/40">&quot;Abhishek&quot;</span>,</p>
-                      <p className="pl-3"><span className="text-[#C8FF00]/40">stack</span>: <span className="text-cream/40">&quot;Full-Stack&quot;</span>,</p>
-                      <p className="pl-3"><span className="text-[#C8FF00]/40">focus</span>: <span className="text-cream/40">&quot;Backend&quot;</span>,</p>
-                      <p>{'}'}</p>
-                    </div>
-                  </div>
-
-                  <div className="relative z-10">
-                    <p className="text-cream/90 font-display text-base font-bold">Abhishek Raut</p>
-                    <p className="text-cream/50 text-xs tracking-wider uppercase mt-0.5">Full-Stack Engineer</p>
-                    <p className="text-cream/30 text-xs tracking-wider mt-1">Nagpur, India</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative circle */}
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full border-2 border-charcoal/10" />
-            </div>
+          {/* Right: Terminal */}
+          <div className="lg:col-span-6  flex justify-center lg:justify-end animate-fade-up-delay-3 ">
+            <Terminal
+              username="abhishek"
+              commands={[
+                "cat ./about.json",
+                "echo $CURRENT_STATUS",
+                "node --version && npm --version",
+                "cat ./stack.txt",
+              ]}
+              outputs={{
+                0: [
+                  '{',
+                  '  "name": "Abhishek Raut",',
+                  '  "role": "Full-Stack Engineer",',
+                  '  "focus": "Backend",',
+                  '  "location": "Nagpur, India"',
+                  '}',
+                ],
+                1: [
+                  "✔ Open to full-time roles",
+                ],
+                2: [
+                  "v20.11.0",
+                  "10.2.4",
+                ],
+                3: [
+                  "TypeScript | Node.js | React",
+                  "PostgreSQL | MongoDB | Redis",
+                  "AWS | Docker | CI/CD",
+                ],
+              }}
+              typingSpeed={45}
+              delayBetweenCommands={1000}
+            />
           </div>
+
         </div>
 
-        {/* Tech logos bar */}
-        <div className="animate-fade-up-delay-4 mt-16 pt-8 border-t border-charcoal/10">
-          <p className="text-xs tracking-widest uppercase text-charcoal/30 mb-6 font-medium">Technologies I work with</p>
-          <div className="flex items-center gap-8 md:gap-10 flex-wrap">
-            {['Node.js', 'TypeScript', 'React', 'Next.js', 'PostgreSQL', 'Redis', 'Docker', 'AWS'].map((tech, i) => (
-              <span key={i} className="text-charcoal/25 font-mono text-xs font-medium tracking-wide hover:text-charcoal/50 transition-colors cursor-default">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
