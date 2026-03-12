@@ -40,8 +40,7 @@ export default function Hero() {
             <h1 className="animate-fade-up-delay-1 text-[clamp(42px,7vw,96px)] font-display font-bold leading-[0.95] tracking-tighter text-charcoal mb-8">
               <span className="block">Building</span>
               <span className="block italic font-normal text-muted">Scalable</span>
-              <span className="block">Backend Systems</span>
-              <span className="block">& Real-Time <span className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#C8FF00] mb-1 md:mb-2"></span></span>
+              <span className="block">Fullstack AI <span className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#C8FF00] mb-1 md:mb-2"></span></span>
               <span className="block">Applications.</span>
             </h1>
 
