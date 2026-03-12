@@ -1,5 +1,6 @@
 'use client'
 import { Terminal } from '@/components/ui/terminal'
+import { PhotoCard } from './ui/PhotoCard'
 
 export default function Hero() {
   return (
@@ -52,7 +53,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Terminal */}
-          <div className="lg:col-span-6  flex justify-center lg:justify-end animate-fade-up-delay-3 ">
+          {/* <div className="lg:col-span-6  flex justify-center lg:justify-end animate-fade-up-delay-3 ">
             <Terminal
               username="abhishek"
               commands={[
@@ -86,8 +87,9 @@ export default function Hero() {
               typingSpeed={45}
               delayBetweenCommands={1000}
             />
-          </div>
+          </div> */}
 
+          <PhotoCard />
         </div>
 
       </div>
