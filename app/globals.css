@@ -102,8 +102,8 @@ details summary .plus { transition: transform 0.3s ease; }
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
 }
 
 /* Cursor dot */
