@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ProjectCard'
 
@@ -30,7 +31,7 @@ export default function Work() {
         </div>
 
         {/* ── Professional Work ─────────────────────────────────── */}
-        <div className="mb-20">
+        <div className="mb-16">
           <div className="flex items-center gap-4 mb-8">
             <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-charcoal/30 font-mono">
               01
@@ -42,8 +43,8 @@ export default function Work() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {professionalProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} featured={index === 0} />
+            {professionalProjects.slice(0, 2).map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
@@ -61,23 +62,28 @@ export default function Work() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {personalProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} featured={index === 0} />
+            {personalProjects.slice(0, 2).map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
 
-        {/* More projects button */}
-        <div className="mt-10 flex justify-end">
-          <a
-            href="https://github.com/abhishekraut01"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-xs tracking-widest uppercase font-medium text-charcoal/40 hover:text-charcoal transition-colors group"
+        {/* View More button */}
+        <div className="mt-14 flex justify-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-3 text-xs tracking-widest uppercase font-medium text-charcoal/50 border border-charcoal/15 rounded-full px-8 py-3.5 hover:text-charcoal hover:border-charcoal/40 hover:bg-charcoal/[0.03] transition-all duration-300 group"
           >
-            More on GitHub
-            <span className="w-8 h-px bg-charcoal/20 group-hover:bg-charcoal group-hover:w-12 transition-all duration-300" />
-          </a>
+            View More Projects
+            <svg
+              className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
