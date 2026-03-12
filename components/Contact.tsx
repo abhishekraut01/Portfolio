@@ -120,7 +120,7 @@ export default function Contact() {
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-cream/10 flex items-center justify-between flex-wrap gap-4">
           <p className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">
-            © 2025 Abhishek Raut
+            © 2026 Abhishek Raut
           </p>
           <div className="flex items-center gap-5">
             <a href="https://github.com/abhishekraut01" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-cream/20 hover:text-cream/50 transition-colors font-medium">
@@ -132,7 +132,7 @@ export default function Contact() {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-[#C8FF00]" />
-            <span className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">Built with Next.js</span>
+            <span className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">Built with 💗 by Abhishek Raut</span>
           </div>
         </div>
       </div>
