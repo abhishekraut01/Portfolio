@@ -1,57 +1,37 @@
 'use client'
 
-const testimonials = [
+const metrics = [
   {
-    quote: 'Patrick\'s work on our products not only impresses our users but also inspires our team to push creative boundaries.',
-    name: 'Sarah Miller',
-    handle: '@sarah.designs',
-    role: 'Head of Design',
+    value: '1000+',
+    label: 'Active Users Served',
+    description: 'PlaySync real-time music platform',
   },
   {
-    quote: 'Patrick Hansen\'s essential product design skills transformed our experience. His ability to merge aesthetic appeal with functional design has redefined our creative process, making our projects both innovative and highly user-friendly.',
-    name: 'Emma Johnson',
-    handle: '@emma_creates',
-    role: 'CEO, Forma',
+    value: '~10ms',
+    label: 'Real-Time Sync Latency',
+    description: 'WebSocket-based synchronization',
   },
   {
-    quote: 'Working with Patrick Hansen has boosted our design quality. His strategic approach consistently ensures every detail aligns, resulting in first-class user interactions.',
-    name: 'Michael Carter',
-    handle: '@mike_carter_official',
-    role: 'Product Lead',
+    value: '20+',
+    label: 'Developers Mentored',
+    description: 'Led intern teams and code reviews',
   },
   {
-    quote: 'His attention to detail and ability to balance aesthetics with usability is second to none. Every project he touches becomes something truly special.',
-    name: 'David Thompson',
-    handle: '@david.designs',
-    role: 'Founder, Beacon',
+    value: '40–50%',
+    label: 'Build Time Optimization',
+    description: 'Monorepo migration with Turborepo',
   },
   {
-    quote: 'An exceptional designer who brings both vision and precision. Patrick helped us ship a design system that the entire engineering team actually loves using.',
-    name: 'Tom Wilson',
-    handle: '@tom_creative',
-    role: 'CTO, Orbit',
+    value: '25%',
+    label: 'Cloud Cost Reduction',
+    description: 'Infrastructure optimization on AWS',
   },
   {
-    quote: 'Patrick\'s user-centered approach transformed how we think about product development. His insights are always grounded in real user research.',
-    name: 'Jessica Brown',
-    handle: '@jessica.brown',
-    role: 'VP Product',
+    value: '3+',
+    label: 'Production Systems Shipped',
+    description: 'End-to-end build and deployment',
   },
 ]
-
-function Avatar({ name }: { name: string }) {
-  const initials = name.split(' ').map(n => n[0]).join('')
-  const colors = ['#2d2922', '#1a1a2e', '#1e2535', '#2a1f1f', '#1f2a1f', '#2a1f2a']
-  const color = colors[name.length % colors.length]
-  return (
-    <div
-      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white/80 shrink-0"
-      style={{ backgroundColor: color }}
-    >
-      {initials}
-    </div>
-  )
-}
 
 export default function Testimonials() {
   return (
@@ -60,63 +40,55 @@ export default function Testimonials() {
         {/* Header */}
         <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
           <div>
-            <span className="tag-pill text-charcoal/40 mb-4 inline-block">Testimonials</span>
+            <span className="tag-pill text-charcoal/40 mb-4 inline-block">Impact</span>
             <h2 className="text-[clamp(28px,4vw,52px)] font-display font-bold leading-tight tracking-tighter text-charcoal">
-              What Clients<br />
-              <span className="italic font-normal text-muted">Are Saying.</span>
+              Measurable<br />
+              <span className="italic font-normal text-muted">Results.</span>
             </h2>
           </div>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
-          {testimonials.map((t, i) => (
+        {/* Metrics grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {metrics.map((m) => (
             <div
-              key={i}
-              className="card-hover break-inside-avoid bg-[#F5F2ED] rounded-2xl p-6 border border-charcoal/5"
+              key={m.label}
+              className="metric-card bg-[#F5F2ED] rounded-2xl p-6 border border-charcoal/5"
             >
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, s) => (
-                  <svg key={s} className="w-3 h-3 text-[#C8FF00]" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-
-              <p className="text-sm text-charcoal/65 leading-relaxed font-light mb-5">
-                "{t.quote}"
+              {/* Value */}
+              <p className="text-[clamp(32px,5vw,48px)] font-display font-bold text-charcoal tracking-tighter leading-none mb-2">
+                {m.value}
               </p>
 
-              <div className="flex items-center gap-3">
-                <Avatar name={t.name} />
-                <div>
-                  <p className="text-sm font-medium text-charcoal">{t.name}</p>
-                  <p className="text-xs text-charcoal/35 font-mono">{t.handle}</p>
-                </div>
-              </div>
+              {/* Label */}
+              <p className="text-sm font-medium text-charcoal/70 tracking-tight mb-2">
+                {m.label}
+              </p>
+
+              {/* Description */}
+              <p className="text-xs text-charcoal/35 font-light leading-relaxed">
+                {m.description}
+              </p>
+
+              {/* Accent line */}
+              <div className="mt-4 w-8 h-0.5 bg-[#C8FF00] rounded-full" />
             </div>
           ))}
         </div>
 
-        {/* Rating summary */}
+        {/* Summary bar */}
         <div className="mt-12 flex items-center gap-6 flex-wrap">
-          <div className="flex items-center gap-2">
-            <div className="flex -space-x-2">
-              {testimonials.slice(0, 4).map((t, i) => (
-                <Avatar key={i} name={t.name} />
-              ))}
-            </div>
-            <span className="text-sm text-charcoal/50 font-light ml-2">
-              <span className="font-semibold text-charcoal">4.9/5</span> from 40+ clients
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-[#C8FF00]" />
+            <span className="text-sm text-charcoal/50 font-light">
+              <span className="font-semibold text-charcoal">1+ year</span> of production engineering experience
             </span>
           </div>
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, s) => (
-              <svg key={s} className="w-4 h-4 text-[#C8FF00]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-[#C8FF00]" />
+            <span className="text-sm text-charcoal/50 font-light">
+              <span className="font-semibold text-charcoal">Full-stack</span> — frontend to infrastructure
+            </span>
           </div>
         </div>
       </div>

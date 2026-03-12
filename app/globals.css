@@ -148,3 +148,112 @@ details summary .plus { transition: transform 0.3s ease; }
   text-transform: uppercase;
   font-weight: 500;
 }
+
+/* ====== NEW STYLES FOR ENGINEER PORTFOLIO ====== */
+
+/* Tech grid card hover glow */
+.tech-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tech-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200,255,0,0.08);
+  border-color: rgba(200,255,0,0.2);
+}
+
+/* Timeline connector */
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, #C8FF00, rgba(200,255,0,0.1));
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #C8FF00;
+  border: 3px solid #111110;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timeline-dot-muted {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3a3a35;
+  border: 3px solid #111110;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* Metric count-up fade */
+@keyframes countFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count {
+  animation: countFade 0.6s ease forwards;
+}
+
+/* Subtle code accent */
+.code-accent {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #C8FF00;
+  letter-spacing: 0.05em;
+}
+
+/* Metric card shimmer */
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+}
+.metric-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,255,0,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Experience highlight pill */
+.exp-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: rgba(200,255,0,0.08);
+  border: 1px solid rgba(200,255,0,0.15);
+  border-radius: 100px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #C8FF00;
+}
+
+/* Dark tag pill variant */
+.tag-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(245,242,237,0.1);
+  border-radius: 100px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(245,242,237,0.4);
+}

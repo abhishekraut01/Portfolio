@@ -6,9 +6,6 @@ export default function Contact() {
     name: '',
     email: '',
     message: '',
-    budget: '',
-    senderName: '',
-    senderEmail: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
@@ -16,7 +13,7 @@ export default function Contact() {
     e.preventDefault()
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
-    setForm({ name: '', email: '', message: '', budget: '', senderName: '', senderEmail: '' })
+    setForm({ name: '', email: '', message: '' })
   }
 
   return (
@@ -27,33 +24,34 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <span className="tag-pill text-cream/20 border-cream/10 mb-6 inline-block">Get in Touch</span>
             <h2 className="text-[clamp(32px,5vw,64px)] font-display font-bold leading-tight tracking-tighter text-cream mb-6">
-              Let's Build<br />
-              <span className="italic font-normal text-cream/40">Something Great.</span>
+              Let&apos;s Build<br />
+              <span className="italic font-normal text-cream/40">Scalable Systems Together.</span>
             </h2>
             <p className="text-sm text-cream/40 leading-relaxed font-light max-w-sm mb-10">
-              Have a project in mind? Whether it's a complete redesign, a new product, or a quick consult — I'm here to help.
+              Have a project that needs solid engineering? Whether it&apos;s a backend system, a real-time platform, or infrastructure work — let&apos;s talk.
             </p>
 
             {/* Contact info */}
             <div className="space-y-4">
               <div>
                 <p className="text-[10px] tracking-widest uppercase text-cream/25 mb-1 font-medium">Email</p>
-                <a href="mailto:phx@gmail.com" className="text-sm text-cream/70 hover:text-cream transition-colors">
-                  phx@gmail.com
+                <a href="mailto:Abhishekgajananraut@gmail.com" className="text-sm text-cream/70 hover:text-cream transition-colors">
+                  Abhishekgajananraut@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-[10px] tracking-widest uppercase text-cream/25 mb-1 font-medium">Location</p>
-                <p className="text-sm text-cream/70">Los Angeles, California</p>
+                <p className="text-sm text-cream/70">Nagpur, India</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest uppercase text-cream/25 mb-1 font-medium">Social</p>
+                <p className="text-[10px] tracking-widest uppercase text-cream/25 mb-1 font-medium">Connect</p>
                 <div className="flex gap-4 mt-1">
-                  {['Twitter / X', 'LinkedIn', 'Dribbble'].map((s) => (
-                    <a key={s} href="#" className="text-xs text-cream/35 hover:text-cream transition-colors">
-                      {s}
-                    </a>
-                  ))}
+                  <a href="https://github.com/abhishekraut01" target="_blank" rel="noopener noreferrer" className="text-xs text-cream/35 hover:text-cream transition-colors">
+                    GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/sweabhishek" target="_blank" rel="noopener noreferrer" className="text-xs text-cream/35 hover:text-cream transition-colors">
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>
@@ -62,10 +60,10 @@ export default function Contact() {
           {/* Right: Form */}
           <div className="lg:col-span-7">
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Project name */}
+              {/* Name */}
               <div>
                 <label className="block text-[10px] tracking-widest uppercase text-cream/30 mb-2 font-medium">
-                  Project / Company
+                  Your Name
                 </label>
                 <input
                   type="text"
@@ -96,46 +94,12 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
-                  rows={4}
-                  placeholder="Tell me about your project..."
+                  rows={5}
+                  placeholder="Tell me about your project or opportunity..."
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className="w-full bg-cream/5 border border-cream/10 rounded-xl px-4 py-3.5 text-sm text-cream placeholder:text-cream/20 focus:outline-none focus:border-cream/30 transition-colors resize-none"
                 />
-              </div>
-
-              <div className="grid grid-cols-2 gap-5">
-                {/* Sender name */}
-                <div>
-                  <label className="block text-[10px] tracking-widest uppercase text-cream/30 mb-2 font-medium">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    value={form.senderName}
-                    onChange={(e) => setForm({ ...form, senderName: e.target.value })}
-                    className="w-full bg-cream/5 border border-cream/10 rounded-xl px-4 py-3.5 text-sm text-cream placeholder:text-cream/20 focus:outline-none focus:border-cream/30 transition-colors"
-                  />
-                </div>
-
-                {/* Budget */}
-                <div>
-                  <label className="block text-[10px] tracking-widest uppercase text-cream/30 mb-2 font-medium">
-                    Budget
-                  </label>
-                  <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                    className="w-full bg-cream/5 border border-cream/10 rounded-xl px-4 py-3.5 text-sm text-cream/60 focus:outline-none focus:border-cream/30 transition-colors appearance-none"
-                  >
-                    <option value="" className="bg-charcoal">Select range</option>
-                    <option value="5k" className="bg-charcoal">$5k – $15k</option>
-                    <option value="15k" className="bg-charcoal">$15k – $30k</option>
-                    <option value="30k" className="bg-charcoal">$30k – $60k</option>
-                    <option value="60k+" className="bg-charcoal">$60k+</option>
-                  </select>
-                </div>
               </div>
 
               {/* Submit */}
@@ -147,7 +111,7 @@ export default function Contact() {
                     : 'bg-cream text-charcoal hover:bg-cream/90'
                 }`}
               >
-                {submitted ? '✓ Message Sent!' : 'Submit'}
+                {submitted ? '✓ Message Sent!' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -156,18 +120,19 @@ export default function Contact() {
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-cream/10 flex items-center justify-between flex-wrap gap-4">
           <p className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">
-            Framer template by Patrick Mokot
+            © 2025 Abhishek Raut
           </p>
           <div className="flex items-center gap-5">
-            {['X', 'Dribbble', 'LinkedIn'].map((s) => (
-              <a key={s} href="#" className="text-[10px] tracking-widest uppercase text-cream/20 hover:text-cream/50 transition-colors font-medium">
-                {s}
-              </a>
-            ))}
+            <a href="https://github.com/abhishekraut01" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-cream/20 hover:text-cream/50 transition-colors font-medium">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/sweabhishek" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-widest uppercase text-cream/20 hover:text-cream/50 transition-colors font-medium">
+              LinkedIn
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-[#C8FF00]" />
-            <span className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">Made in Framer</span>
+            <span className="text-[10px] tracking-widest uppercase text-cream/20 font-medium">Built with Next.js</span>
           </div>
         </div>
       </div>

@@ -19,18 +19,18 @@ export default function Navbar() {
         {/* Left links */}
         <div className="hidden md:flex items-center gap-10">
           <a href="#" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Home</a>
-          <a href="#work" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Work</a>
+          <a href="#projects" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Projects</a>
         </div>
 
         {/* Center name */}
         <a href="#" className="absolute left-1/2 -translate-x-1/2 text-sm tracking-widest uppercase font-semibold text-charcoal">
-          Patrick Hansen
+          Abhishek Raut
         </a>
 
         {/* Right links */}
         <div className="hidden md:flex items-center gap-10 ml-auto">
-          <span className="text-xs tracking-widest uppercase font-medium text-charcoal/40">Senior Product Designer</span>
-          <span className="text-xs tracking-widest uppercase font-medium text-charcoal/40">Los Angeles</span>
+          <span className="text-xs tracking-widest uppercase font-medium text-charcoal/40">Full-Stack Engineer</span>
+          <a href="#experience" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Experience</a>
           <a href="#contact" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Contact</a>
         </div>
 
@@ -49,14 +49,19 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div className={`md:hidden overflow-hidden transition-all duration-500 ${menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="bg-[#F5F2ED] border-t border-black/5 px-6 py-6 flex flex-col gap-5">
-          {['Home', 'Work', 'About', 'Contact'].map((item) => (
+          {[
+            { label: 'Home', href: '#' },
+            { label: 'Projects', href: '#projects' },
+            { label: 'Experience', href: '#experience' },
+            { label: 'Contact', href: '#contact' },
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               onClick={() => setMenuOpen(false)}
               className="text-sm tracking-widest uppercase font-medium text-charcoal/70"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>

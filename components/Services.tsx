@@ -1,32 +1,29 @@
 'use client'
 
-const services = [
+const philosophyItems = [
   {
-    label: 'UI/UX Design',
-    description: 'Crafting clean, intuitive interfaces grounded in user research and behavioral psychology.',
+    label: 'Backend Engineering',
   },
   {
-    label: 'Motion',
-    description: 'Bringing interfaces to life with purposeful animation and fluid micro-interactions.',
+    label: 'Real-Time Systems',
   },
   {
-    label: 'Branding',
-    description: 'Building cohesive visual identities that resonate deeply with target audiences.',
+    label: 'DevOps & Infra',
   },
 ]
 
 const capabilities = [
   {
-    title: 'No-Code',
-    description: 'Leverage innovative no-code platforms to rapidly build innovative prototypes, enabling quick iterations and user testing that validate design concepts and accelerate product development across any platform.',
+    title: 'Backend Engineering',
+    description: 'Building scalable APIs, robust data models, and maintainable architecture patterns. Focus on clean code, efficient database design, and systems that handle real-world load with grace.',
   },
   {
-    title: 'Strategy',
-    description: 'Conduct research and strategic planning to align design decisions with business objectives, integrating user insights and market trends to inform product innovation and ensure advantage.',
+    title: 'Real-Time Systems',
+    description: 'Designing low-latency systems using WebSockets, Redis pub/sub, and event-driven architecture. From collaborative platforms to live notifications — making the web feel instant.',
   },
   {
-    title: 'Interactions',
-    description: 'Refine digital product interactions through iterative testing and analysis, ensuring usability, accessibility, and overall user engagement to deliver intuitive experiences that satisfy diverse audience needs.',
+    title: 'DevOps & Infrastructure',
+    description: 'Automating CI/CD pipelines with GitHub Actions and Argo CD. Deploying containerized systems on AWS with Docker and Kubernetes. Monitoring with Prometheus and Grafana.',
   },
 ]
 
@@ -37,15 +34,15 @@ export default function Services() {
         {/* Top tagline */}
         <div className="mb-20">
           <p className="text-[clamp(22px,3.5vw,40px)] font-display font-light leading-tight text-cream/60 max-w-3xl">
-            I create sturdy bonds through{' '}
-            <span className="text-[#C8FF00] italic font-bold">deep alignment</span>{' '}
-            with my clients' aims and values.
+            I build systems that prioritize{' '}
+            <span className="text-[#C8FF00] italic font-bold">reliability, scalability</span>{' '}
+            and clean engineering principles.
           </p>
         </div>
 
         {/* Service labels */}
         <div className="grid grid-cols-3 gap-4 mb-20">
-          {services.map((s) => (
+          {philosophyItems.map((s) => (
             <div key={s.label} className="border-t border-cream/10 pt-5 group">
               <h3 className="text-xs tracking-widest uppercase font-medium text-cream/30 group-hover:text-cream/60 transition-colors mb-3">
                 {s.label}
@@ -74,7 +71,7 @@ export default function Services() {
         {/* Marquee text */}
         <div className="mt-24 overflow-hidden border-t border-cream/5 pt-8">
           <div className="flex gap-0 animate-marquee whitespace-nowrap">
-            {Array(8).fill(['Senior Product Designer', '•', 'Los Angeles, CA', '•', 'Available for Work', '•']).flat().map((text, i) => (
+            {Array(8).fill(['Full-Stack Engineer', '•', 'Nagpur, India', '•', 'Open to Work', '•']).flat().map((text, i) => (
               <span key={i} className={`text-xs tracking-widest uppercase font-medium pr-8 ${text === '•' ? 'text-[#C8FF00]' : 'text-cream/20'}`}>
                 {text}
               </span>

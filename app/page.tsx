@@ -1,9 +1,11 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import TechStack from '@/components/TechStack'
 import Work from '@/components/Work'
+import Experience from '@/components/Experience'
 import Services from '@/components/Services'
-import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
+import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
 
 export default function Home() {
@@ -11,10 +13,12 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <TechStack />
       <Work />
+      <Experience />
       <Services />
-      <FAQ />
       <Testimonials />
+      <FAQ />
       <Contact />
     </main>
   )

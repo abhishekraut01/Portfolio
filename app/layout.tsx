@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Patrick Hansen — Senior Product Designer',
-  description: 'Crafting intuitive and visually compelling products. Senior Product Designer based in Los Angeles.',
+  title: 'Abhishek Raut — Full-Stack Engineer',
+  description: 'Full-Stack Developer building scalable backend systems, real-time web applications, and production-grade infrastructure. Based in Nagpur, India.',
 }
 
 export default function RootLayout({

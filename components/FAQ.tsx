@@ -3,24 +3,24 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: 'What is your role?',
-    a: 'I\'m a Senior Product Designer specializing in UI/UX, motion design, and brand strategy. I work with startups and scale-ups to craft digital experiences that are both functionally excellent and visually memorable.',
+    q: 'What technologies do you specialize in?',
+    a: 'I specialize in Node.js, TypeScript, React, and Next.js for the core stack. On the backend, I work extensively with PostgreSQL, Redis, and MongoDB. For infrastructure, I use Docker, Kubernetes, and AWS services. I also have experience building AI-powered features using LangChain and RAG pipelines.',
   },
   {
-    q: 'How do you use user personas?',
-    a: 'Personas are central to my process. I build them through qualitative interviews, usage analytics, and contextual inquiry. They serve as a north star during design reviews to keep decisions anchored in real user needs rather than assumptions.',
+    q: 'What type of systems have you built?',
+    a: 'I\'ve built real-time collaborative platforms (PlaySync with ~10ms sync), AI-powered applications (FitsYouAI virtual try-on), privacy-first chat systems (Koshitsu), and production order management systems. My focus is on scalable architectures that handle real-world traffic reliably.',
   },
   {
-    q: 'Which design tools do you use?',
-    a: 'Figma is my primary tool for UI design and prototyping. I use ProtoPie and Principle for complex interactions, Framer for web, Lottie/After Effects for motion, and Notion for documentation. I also work comfortably in no-code platforms like Webflow.',
+    q: 'Are you open to opportunities?',
+    a: 'Yes! I\'m currently open to full-time software engineering roles. I\'m particularly interested in positions involving backend engineering, real-time systems, or infrastructure challenges. I\'m based in Nagpur, India and open to remote opportunities globally.',
   },
   {
-    q: 'How do you collaborate with teams?',
-    a: 'I embed tightly with product and engineering from discovery to launch. I run design critiques, hold regular design-dev syncs, and document decisions clearly to reduce ambiguity. Good design is a team sport.',
+    q: 'How do you approach system design?',
+    a: 'I start with understanding the problem domain and expected scale. I design for reliability first — choosing the right database, caching strategy, and communication patterns. I believe in iterative architecture: start simple, measure performance, and optimize based on real data rather than premature optimization.',
   },
   {
-    q: 'How do you balance innovation and constraints?',
-    a: 'I treat constraints as creative fuel. Understanding technical, business, and user limits upfront actually sharpens solutions. I push for innovation within the space of what\'s buildable — bold ideas grounded in what can actually ship.',
+    q: 'What are you currently learning?',
+    a: 'I\'m deepening my knowledge of distributed systems, exploring advanced Kubernetes patterns, and experimenting with AI agent architectures using LangChain. I\'m also focused on improving my understanding of observability and building more sophisticated monitoring pipelines.',
   },
 ]
 
@@ -36,10 +36,10 @@ export default function FAQ() {
             <span className="tag-pill text-charcoal/40 mb-5 inline-block">FAQ</span>
             <h2 className="text-[clamp(28px,4vw,52px)] font-display font-bold leading-tight tracking-tighter text-charcoal">
               Got Questions?<br />
-              <span className="italic font-normal text-muted">I've Got Answers.</span>
+              <span className="italic font-normal text-muted">I&apos;ve Got Answers.</span>
             </h2>
             <p className="mt-5 text-sm text-charcoal/50 leading-relaxed font-light max-w-xs">
-              Everything you might want to know about how I work, what I use, and how we can create something great together.
+              Everything you might want to know about my tech stack, experience, and how I approach engineering challenges.
             </p>
           </div>
 
