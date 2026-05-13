@@ -6,11 +6,8 @@ import ProjectCard from '@/components/ProjectCard'
 export const metadata: Metadata = {
   title: 'Projects — Abhishek Raut',
   description:
-    'All engineering projects by Abhishek Raut — professional client work and personal side projects.',
+    'All engineering projects by Abhishek Raut — production systems, AI agents, and personal side projects.',
 }
-
-const professionalProjects = projects.filter((p) => p.type === 'professional')
-const personalProjects = projects.filter((p) => p.type === 'personal')
 
 export default function ProjectsPage() {
   return (
@@ -46,46 +43,15 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="text-base text-muted mt-3 max-w-lg font-light">
-            A collection of professional client work and personal engineering projects — built with modern tools, real users, and production‑grade systems.
+            A collection of engineering projects — built with modern tools, real users, and production‑grade systems.
           </p>
         </div>
 
-        {/* ── Professional Work ─────────────────────────────────── */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-charcoal/30 font-mono">
-              01
-            </span>
-            <h2 className="text-lg md:text-xl font-display font-semibold tracking-tight text-charcoal">
-              Professional Work
-            </h2>
-            <span className="flex-1 h-px bg-charcoal/10" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {professionalProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </div>
-
-        {/* ── Personal Projects ─────────────────────────────────── */}
-        <div>
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-charcoal/30 font-mono">
-              02
-            </span>
-            <h2 className="text-lg md:text-xl font-display font-semibold tracking-tight text-charcoal">
-              Personal Projects
-            </h2>
-            <span className="flex-1 h-px bg-charcoal/10" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {personalProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+        {/* All Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
 
         {/* Back link */}

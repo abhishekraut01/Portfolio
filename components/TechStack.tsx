@@ -4,27 +4,27 @@ const techCategories = [
   {
     title: 'Frontend',
     prefix: '>_ ui',
-    items: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind', 'Zustand'],
+    items: ['JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Zustand'],
   },
   {
     title: 'Backend',
     prefix: '>_ server',
-    items: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'gRPC', 'WebSockets', 'Microservices'],
+    items: ['Python', 'Node.js', 'Express.js', 'FastAPI', 'RESTful APIs', 'GraphQL', 'gRPC', 'WebSockets', 'Microservices', 'Nginx'],
   },
   {
-    title: 'Databases',
+    title: 'Databases & Caching',
     prefix: '>_ data',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Mongoose', 'Pinecone'],
+    items: ['MongoDB', 'PostgreSQL', 'Redis', 'Pinecone', 'ChromaDB', 'Qdrant', 'Prisma', 'Mongoose'],
   },
   {
-    title: 'DevOps',
+    title: 'DevOps & Tools',
     prefix: '>_ infra',
-    items: ['Docker', 'Kubernetes', 'AWS', 'GitHub Actions', 'Argo CD', 'Prometheus', 'Grafana', 'Turborepo'],
+    items: ['Docker', 'Kubernetes', 'AWS (EC2, ECS, ECR, ASG)', 'Argo CD', 'Prometheus', 'Grafana', 'Turborepo', 'Git', 'GitHub Actions'],
   },
   {
     title: 'AI & Automation',
     prefix: '>_ ai',
-    items: ['LangChain', 'RAG Pipelines', 'LLM Agents', 'n8n'],
+    items: ['LLMs', 'RAG Pipelines', 'MCP', 'LangChain', 'Prompt Engineering', 'Semantic Search', 'Fine-Tuning', 'Multi-Model Routing'],
   },
 ]
 

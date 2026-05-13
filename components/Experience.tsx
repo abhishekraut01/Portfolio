@@ -2,29 +2,16 @@
 
 const experiences = [
   {
-    company: 'DevSync.in',
-    role: 'Freelance Software Engineer',
-    period: 'June 2025 – Present',
+    company: 'Ignix Social',
+    role: 'Software Engineer',
+    period: 'Jan 2025 – Present',
     current: true,
     highlights: [
-      'Built a production order management system',
-      'Designed scalable backend services with Node.js & PostgreSQL',
-      'Managed Docker-based deployments on AWS',
-      'Implemented CI/CD pipelines with GitHub Actions',
-      'Maintained production infrastructure and monitoring',
-    ],
-  },
-  {
-    company: 'The Boring Education',
-    role: 'SDE Intern',
-    period: 'Jan 2025 – June 2025',
-    current: false,
-    highlights: [
-      'Led team of 7 interns across multiple projects',
-      'Migrated projects to monorepo, reducing build time by 40–50%',
-      'Shipped 20+ features to production',
-      'Built PlaySync — a real-time music streaming platform',
-      'Set up CI/CD and deployment workflows',
+      'Led end-to-end development of an Order Management System for a fashion designer, cutting order processing time by 60%.',
+      'Built a QR-based restaurant SaaS for contactless menu browsing and ordering, deployed across multiple clients.',
+      'Delivered LLM fine-tuning on a client\'s customer support data, improving response relevance and reducing human handoff.',
+      'Designed and shipped 5+ agentic AI systems using LangGraph, LangChain, and LoRA fine-tuned domain-specific models.',
+      'Shipped frontend modules for a large-scale E-commerce ERP (warehouse, store) using TypeScript, React, and Zustand, applying debouncing, lazy loading, and memoization to cut unnecessary re-renders by 40%.',
     ],
   },
 ]

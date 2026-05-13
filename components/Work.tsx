@@ -4,9 +4,6 @@ import Link from 'next/link'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ProjectCard'
 
-const professionalProjects = projects.filter((p) => p.type === 'professional')
-const personalProjects = projects.filter((p) => p.type === 'personal')
-
 export default function Work() {
   return (
     <section id="projects" className="py-24 md:py-32 bg-[#F5F2ED]">
@@ -30,42 +27,11 @@ export default function Work() {
           </a>
         </div>
 
-        {/* ── Professional Work ─────────────────────────────────── */}
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-charcoal/30 font-mono">
-              01
-            </span>
-            <h3 className="text-lg md:text-xl font-display font-semibold tracking-tight text-charcoal">
-              Professional Work
-            </h3>
-            <span className="flex-1 h-px bg-charcoal/10" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {professionalProjects.slice(0, 2).map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </div>
-
-        {/* ── Personal Projects ─────────────────────────────────── */}
-        <div>
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-charcoal/30 font-mono">
-              02
-            </span>
-            <h3 className="text-lg md:text-xl font-display font-semibold tracking-tight text-charcoal">
-              Personal Projects
-            </h3>
-            <span className="flex-1 h-px bg-charcoal/10" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {personalProjects.slice(0, 2).map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+        {/* All Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
 
         {/* View More button */}

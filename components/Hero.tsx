@@ -30,7 +30,7 @@ export default function Hero() {
             {/* Description */}
             <div className="animate-fade-up-delay-2 max-w-md mt-8">
               <p className="text-[15px] text-charcoal/60 leading-relaxed font-light">
-                Full-Stack Engineer with experience building production-grade systems using Node.js, TypeScript, and AWS. Focused on real-time systems, scalable APIs, and reliable infrastructure.
+                Software Engineer building production full-stack applications and agentic AI systems. Hands-on experience with TypeScript, React, Python, FastAPI, Node.js, and LangGraph, shipping end-to-end systems from ERP modules and SaaS platforms to LLM fine-tuning and multi-agent workflows.
               </p>
               <div className="mt-8 flex items-center gap-4">
                 <a

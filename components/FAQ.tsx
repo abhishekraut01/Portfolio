@@ -4,15 +4,15 @@ import { useState } from 'react'
 const faqs = [
   {
     q: 'What technologies do you specialize in?',
-    a: 'I specialize in Node.js, TypeScript, React, and Next.js for the core stack. On the backend, I work extensively with PostgreSQL, Redis, and MongoDB. For infrastructure, I use Docker, Kubernetes, and AWS services. I also have experience building AI-powered features using LangChain and RAG pipelines.',
+    a: 'I specialize in TypeScript, React, Next.js, Python, and FastAPI for the core stack. On the backend, I work with Node.js, PostgreSQL, Redis, and MongoDB. For AI, I build multi-agent systems with LangGraph and LangChain, including RAG pipelines and LLM fine-tuning. For infrastructure, I use Docker, Kubernetes, and AWS.',
   },
   {
     q: 'What type of systems have you built?',
-    a: 'I\'ve built real-time collaborative platforms (PlaySync with ~10ms sync), AI-powered applications (FitsYouAI virtual try-on), privacy-first chat systems (Koshitsu), and production order management systems. My focus is on scalable architectures that handle real-world traffic reliably.',
+    a: 'I\'ve built multi-agent AI ordering systems (LangGraph + FastAPI), autonomous DevOps agents that investigate production errors (AI Incident Investigator), real-time collaborative platforms (PlaySync with ~10ms sync), ERP modules, and QR-based restaurant SaaS platforms. My focus is on production systems that handle real-world traffic reliably.',
   },
   {
     q: 'Are you open to opportunities?',
-    a: 'Yes! I\'m currently open to full-time software engineering roles. I\'m particularly interested in positions involving backend engineering, real-time systems, or infrastructure challenges. I\'m based in Nagpur, India and open to remote opportunities globally.',
+    a: 'Yes! I\'m currently open to full-time software engineering roles. I\'m particularly interested in positions involving AI/agentic systems, backend engineering, or infrastructure challenges. I\'m based in Nagpur, India and open to remote opportunities globally.',
   },
   {
     q: 'How do you approach system design?',
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: 'What are you currently learning?',
-    a: 'I\'m deepening my knowledge of distributed systems, exploring advanced Kubernetes patterns, and experimenting with AI agent architectures using LangChain. I\'m also focused on improving my understanding of observability and building more sophisticated monitoring pipelines.',
+    a: 'I\'m deepening my work with agentic AI systems — building multi-agent workflows with LangGraph, experimenting with MCP-compatible tool integrations, and fine-tuning domain-specific LLMs with LoRA. I\'m also focused on improving my understanding of observability and building more sophisticated monitoring pipelines.',
   },
 ]
 

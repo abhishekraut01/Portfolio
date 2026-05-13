@@ -29,9 +29,18 @@ export default function Navbar() {
 
         {/* Right links */}
         <div className="hidden md:flex items-center gap-10 ml-auto">
-          <span className="text-xs tracking-widest uppercase font-medium text-charcoal/40">Full-Stack Engineer</span>
           <a href="#experience" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Experience</a>
           <a href="#contact" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Contact</a>
+          <a
+            href="/resume/Abhishek_May_2026_Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 bg-charcoal text-cream text-xs tracking-widest uppercase font-medium px-5 py-2.5 rounded-full hover:bg-charcoal/85 transition-colors"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+            </svg>
+            Resume
+          </a>
         </div>
 
         {/* Mobile menu button */}
@@ -55,6 +64,7 @@ export default function Navbar() {
             { label: 'Experience', href: '#experience' },
             { label: 'Contact', href: '#contact' },
           ].map((item) => (
+
             <a
               key={item.label}
               href={item.href}
@@ -64,6 +74,17 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <a
+            href="/resume/Abhishek_May_2026_Resume.pdf"
+            download
+            onClick={() => setMenuOpen(false)}
+            className="inline-flex items-center gap-2 bg-charcoal text-cream text-xs tracking-widest uppercase font-medium px-5 py-2.5 rounded-full hover:bg-charcoal/85 transition-colors w-fit"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+            </svg>
+            Download Resume
+          </a>
         </div>
       </div>
     </nav>

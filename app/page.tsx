@@ -3,10 +3,10 @@ import Hero from '@/components/Hero'
 import TechStack from '@/components/TechStack'
 import Work from '@/components/Work'
 import Experience from '@/components/Experience'
+import Achievements from '@/components/Achievements'
 import Services from '@/components/Services'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
-import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -16,9 +16,9 @@ export default function Home() {
       <TechStack />
       <Work />
       <Experience />
+      <Achievements />
       <Services />
       <FAQ />
-      <Testimonials />
       <Contact />
     </main>
   )

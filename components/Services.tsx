@@ -5,10 +5,10 @@ const philosophyItems = [
     label: 'Backend Engineering',
   },
   {
-    label: 'Real-Time Systems',
+    label: 'DevOps & Infra',
   },
   {
-    label: 'DevOps & Infra',
+    label: 'AI & Agentic Systems',
   },
 ]
 
@@ -18,12 +18,12 @@ const capabilities = [
     description: 'Building scalable APIs, robust data models, and maintainable architecture patterns. Focus on clean code, efficient database design, and systems that handle real-world load with grace.',
   },
   {
-    title: 'Real-Time Systems',
-    description: 'Designing low-latency systems using WebSockets, Redis pub/sub, and event-driven architecture. From collaborative platforms to live notifications — making the web feel instant.',
-  },
-  {
     title: 'DevOps & Infrastructure',
     description: 'Automating CI/CD pipelines with GitHub Actions and Argo CD. Deploying containerized systems on AWS with Docker and Kubernetes. Monitoring with Prometheus and Grafana.',
+  },
+  {
+    title: 'AI & Agentic Systems',
+    description: 'Designing multi-agent workflows with LangGraph and LangChain. Building RAG pipelines, fine-tuning LLMs with LoRA, and shipping production AI systems — from semantic search to autonomous DevOps agents.',
   },
 ]
 
