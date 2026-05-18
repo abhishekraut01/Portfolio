@@ -32,7 +32,7 @@ export default function Navbar() {
           <a href="#experience" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Experience</a>
           <a href="#contact" className="nav-link text-xs tracking-widest uppercase font-medium text-charcoal/70 hover:text-charcoal transition-colors">Contact</a>
           <a
-            href="/resume/Abhishek_May_2026_Resume.pdf"
+            href="/Resume/Abhishek_May_2026_Resume.pdf"
             download
             className="inline-flex items-center gap-2 bg-charcoal text-cream text-xs tracking-widest uppercase font-medium px-5 py-2.5 rounded-full hover:bg-charcoal/85 transition-colors"
           >
@@ -75,7 +75,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/resume/Abhishek_May_2026_Resume.pdf"
+            href="/Resume/Abhishek_May_2026_Resume.pdf"
             download
             onClick={() => setMenuOpen(false)}
             className="inline-flex items-center gap-2 bg-charcoal text-cream text-xs tracking-widest uppercase font-medium px-5 py-2.5 rounded-full hover:bg-charcoal/85 transition-colors w-fit"
