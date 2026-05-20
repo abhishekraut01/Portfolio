@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { projects } from '@/data/projects'
@@ -43,17 +42,7 @@ export default function SystemsSection() {
           </div>
 
           <article className="runtime-panel overflow-hidden">
-            <div className="project-inspector">
-              <div className="project-visual">
-                <Image
-                  src={activeProject.coverImage}
-                  alt={activeProject.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-              </div>
-              <div className="p-5 sm:p-7">
+            <div className="p-5 sm:p-7">
                 <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#f4efe4]/10 pb-4">
                   <div>
                     <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#baff39]">
@@ -94,7 +83,6 @@ export default function SystemsSection() {
                     <span key={tag} className="runtime-chip">{tag}</span>
                   ))}
                 </div>
-              </div>
             </div>
           </article>
         </div>
