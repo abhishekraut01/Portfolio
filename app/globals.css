@@ -9,9 +9,7 @@
   --paper: #f4efe4;
   --paper-dim: rgba(244, 239, 228, 0.62);
   --lime: #baff39;
-  --copper: #f08a4b;
   --cyan: #6ee7f9;
-  --bone: #e8e0d1;
   --black: #11130f;
 }
 
@@ -67,6 +65,8 @@ a {
   border: 3px solid var(--ink);
 }
 
+/* ── Shell & background ──────────────────────────────────────── */
+
 .runtime-shell {
   position: relative;
   isolation: isolate;
@@ -99,6 +99,8 @@ a {
     linear-gradient(var(--ink), transparent 18%, transparent 82%, var(--ink));
   opacity: 0.65;
 }
+
+/* ── Core components ─────────────────────────────────────────── */
 
 .runtime-strip {
   display: flex;
@@ -184,28 +186,11 @@ a {
   box-shadow: 0 0 18px rgba(186, 255, 57, 0.7);
 }
 
-.operator-frame {
-  position: relative;
-  width: 100%;
-  min-height: 360px;
-  overflow: hidden;
-  border: 1px solid rgba(244, 239, 228, 0.14);
-  border-radius: 8px;
-  background: #171a15;
-}
-
-.operator-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, transparent 35%, rgba(11, 13, 11, 0.84)),
-    repeating-linear-gradient(0deg, transparent 0 5px, rgba(186, 255, 57, 0.04) 6px);
-}
+/* ── System map (hero centre panel) ─────────────────────────── */
 
 .system-map {
   position: relative;
-  min-height: 430px;
+  min-height: 340px;
   overflow: hidden;
   border: 1px solid rgba(244, 239, 228, 0.1);
   border-radius: 8px;
@@ -266,37 +251,17 @@ a {
 .node-deploy { left: 9%; bottom: 10%; }
 .node-observe { left: 38%; bottom: 7%; }
 
-.link-api-data {
-  left: 27%;
-  top: 23%;
-  width: 38%;
-}
-
-.link-api-agent {
-  left: 24%;
-  top: 33%;
-  width: 22%;
-  transform: rotate(32deg);
-}
-
-.link-agent-tools {
-  left: 52%;
-  top: 54%;
-  width: 25%;
-  transform: rotate(18deg);
-}
-
-.link-data-deploy {
-  left: 27%;
-  top: 70%;
-  width: 37%;
-  transform: rotate(-19deg);
-}
+.link-api-data { left: 27%; top: 23%; width: 38%; }
+.link-api-agent { left: 24%; top: 33%; width: 22%; transform: rotate(32deg); }
+.link-agent-tools { left: 52%; top: 54%; width: 25%; transform: rotate(18deg); }
+.link-data-deploy { left: 27%; top: 70%; width: 37%; transform: rotate(-19deg); }
 
 @keyframes tracePulse {
   0%, 100% { opacity: 0.35; }
   50% { opacity: 1; }
 }
+
+/* ── Metric & proof tiles ────────────────────────────────────── */
 
 .metric-tile,
 .proof-tile {
@@ -324,6 +289,8 @@ a {
   font-size: 12px;
   line-height: 1.35;
 }
+
+/* ── Terminal feed & stack rows ──────────────────────────────── */
 
 .terminal-feed {
   display: grid;
@@ -379,19 +346,29 @@ a {
   font-weight: 500;
 }
 
+/* ── Section wrappers ────────────────────────────────────────── */
+
 .runtime-section {
   position: relative;
   background: rgba(11, 13, 11, 0.96);
 }
 
-.runtime-section-light {
+/* Fine-grid variant: used for build-protocol section to differentiate */
+.runtime-section-bench {
   position: relative;
   background:
-    linear-gradient(rgba(17, 19, 15, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 19, 15, 0.055) 1px, transparent 1px),
-    var(--bone);
-  background-size: 38px 38px;
-  color: var(--black);
+    linear-gradient(rgba(244, 239, 228, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 239, 228, 0.022) 1px, transparent 1px),
+    rgba(9, 11, 8, 0.97);
+  background-size: 30px 30px;
+}
+
+/* Contact section: subtle lime glow on left edge */
+.runtime-section-contact {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 15% 55%, rgba(186, 255, 57, 0.035), transparent 48%),
+    rgba(11, 13, 11, 0.98);
 }
 
 .section-heading {
@@ -424,17 +401,7 @@ a {
   line-height: 1.65;
 }
 
-.section-heading-dark p {
-  color: #2f5f00;
-}
-
-.section-heading-dark h2 {
-  color: var(--black);
-}
-
-.section-heading-dark span {
-  color: rgba(17, 19, 15, 0.64);
-}
+/* ── Project browser ─────────────────────────────────────────── */
 
 .project-switch {
   display: block;
@@ -535,76 +502,7 @@ a {
   line-height: 1.65;
 }
 
-.layer-panel {
-  min-height: 255px;
-  border: 1px solid rgba(17, 19, 15, 0.15);
-  border-radius: 8px;
-  background: rgba(255, 252, 244, 0.42);
-  padding: 20px;
-}
-
-.layer-panel span {
-  color: #2f5f00;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 12px;
-}
-
-.layer-panel h3 {
-  margin: 28px 0 14px;
-  color: var(--black);
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-.layer-panel p {
-  margin: 0;
-  color: rgba(17, 19, 15, 0.66);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.deploy-console {
-  border: 1px solid rgba(17, 19, 15, 0.16);
-  border-radius: 8px;
-  background: rgba(17, 19, 15, 0.9);
-  color: var(--paper);
-}
-
-.deploy-line {
-  display: grid;
-  grid-template-columns: 48px minmax(170px, 0.55fr) 1fr;
-  gap: 18px;
-  border-bottom: 1px solid rgba(244, 239, 228, 0.09);
-  padding: 20px;
-}
-
-.deploy-line:last-child {
-  border-bottom: 0;
-}
-
-.deploy-line span,
-.deploy-line strong {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-.deploy-line span {
-  color: var(--lime);
-}
-
-.deploy-line strong {
-  color: rgba(244, 239, 228, 0.82);
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.deploy-line p {
-  margin: 0;
-  color: rgba(244, 239, 228, 0.56);
-  font-size: 14px;
-  line-height: 1.65;
-}
+/* ── Agent pipeline ──────────────────────────────────────────── */
 
 .agent-rail {
   display: grid;
@@ -659,6 +557,8 @@ a {
   line-height: 1.65;
 }
 
+/* ── Experience log ──────────────────────────────────────────── */
+
 .runtime-badge {
   border: 1px solid rgba(186, 255, 57, 0.28);
   border-radius: 999px;
@@ -697,12 +597,14 @@ a {
   line-height: 1.65;
 }
 
+/* ── Contact form ────────────────────────────────────────────── */
+
 .contact-console {
   display: grid;
   gap: 14px;
-  border: 1px solid rgba(17, 19, 15, 0.15);
+  border: 1px solid rgba(244, 239, 228, 0.1);
   border-radius: 8px;
-  background: rgba(17, 19, 15, 0.92);
+  background: rgba(17, 20, 15, 0.9);
   padding: 18px;
 }
 
@@ -753,6 +655,92 @@ a {
   background: #d3ff73;
 }
 
+/* ── Architecture layers (build protocol section) ────────────── */
+
+.arch-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Static left-edge guide line */
+.arch-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 4%,
+    rgba(186, 255, 57, 0.14) 22%,
+    rgba(186, 255, 57, 0.14) 78%,
+    transparent 96%
+  );
+}
+
+/* Animated signal cursor that travels from INGRESS → OBSERVE */
+.arch-flow-cursor {
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 28px;
+  border-radius: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(186, 255, 57, 0.9),
+    rgba(186, 255, 57, 0.3)
+  );
+  box-shadow: 0 0 10px rgba(186, 255, 57, 0.45);
+  animation: archFlow 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes archFlow {
+  0%          { top: 0;                    opacity: 0; }
+  4%          { opacity: 1; }
+  89%         { opacity: 0.9; }
+  95%, 100%   { top: calc(100% - 28px);   opacity: 0; }
+}
+
+.arch-layer {
+  padding: 10px 14px 10px 18px;
+  border-bottom: 1px solid rgba(244, 239, 228, 0.06);
+  cursor: default;
+  transition: background 180ms ease;
+}
+
+.arch-layer:last-child {
+  border-bottom: 0;
+}
+
+.arch-layer:hover {
+  background: rgba(186, 255, 57, 0.03);
+}
+
+.arch-label {
+  margin-bottom: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.arch-tech {
+  font-size: 11px;
+  color: rgba(244, 239, 228, 0.38);
+  line-height: 1.45;
+  transition: color 180ms ease;
+}
+
+.arch-layer:hover .arch-tech {
+  color: rgba(244, 239, 228, 0.60);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
 @media (min-width: 1024px) {
   .project-inspector {
     display: grid;
@@ -779,33 +767,21 @@ a {
     width: 42%;
   }
 
-  .node-api { left: 5%; top: 7%; }
-  .node-data { right: 5%; top: 7%; }
-  .node-agent { left: 5%; top: 34%; }
-  .node-tools { right: 5%; top: 34%; }
+  .node-api    { left: 5%; top: 7%; }
+  .node-data   { right: 5%; top: 7%; }
+  .node-agent  { left: 5%; top: 34%; }
+  .node-tools  { right: 5%; top: 34%; }
   .node-deploy { left: 5%; bottom: 9%; }
   .node-observe { right: 5%; left: auto; bottom: 9%; }
 
   .map-link {
     display: none;
   }
-
-  .deploy-line {
-    grid-template-columns: 38px 1fr;
-  }
-
-  .deploy-line p {
-    grid-column: 2;
-  }
 }
 
 @media (max-width: 520px) {
   .runtime-button {
     width: 100%;
-  }
-
-  .operator-frame {
-    min-height: 320px;
   }
 
   .metric-tile,
