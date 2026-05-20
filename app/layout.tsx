@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Abhishek Raut — Full-Stack Engineer',
-  description: 'Software Engineer building production full-stack applications and agentic AI systems. TypeScript, React, Python, FastAPI, Node.js, and LangGraph. Based in Nagpur, India.',
+  title: 'Abhishek Raut - Backend Systems and AI Agents',
+  description:
+    'Software engineer building backend systems, deployment pipelines, full-stack products, and agentic AI systems with TypeScript, React, Python, FastAPI, Node.js, LangGraph, Docker, Kubernetes, and AWS.',
 }
 
 export default function RootLayout({
@@ -13,9 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="grain">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
