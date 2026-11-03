@@ -14,7 +14,7 @@ export const siteConfig = {
   title: 'Abhishek Raut | Full Stack AI Engineer',
   description:
     'Abhishek Raut is a Full Stack AI Engineer building production AI products, agentic AI workflows, RAG systems and real-time apps with TypeScript, React, Next.js, Node.js and Python.',
-  url: process.env.NEXT_PUBLIC_URL || 'https://abhishekraut.tech',
+  url: process.env.NEXT_PUBLIC_URL || 'https://www.abhishekraut.tech',
   ogImage: '/meta/opengraph-image.png',
   author: {
     name: about.name,
