@@ -46,7 +46,6 @@ export const experiences: Experience[] = [
       'Built the *Humain UI component library*, exposed through MCP and agent skills for AI coding assistants, and adopted as the standard UI layer across *6+ TensorGo products*.',
       'Developed the *Humain SDK* and API key flow to embed the AI avatar in external apps, and led *client integrations*.',
       'Shipped features in an *Agile/Scrum* team with 2-week sprints, sprint planning, stand-ups and code reviews.',
-      'Received the *Star Performer of the Month* award for exceptional performance.',
     ],
     startDate: 'June 2026',
     endDate: 'Present',

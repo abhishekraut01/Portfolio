@@ -11,17 +11,6 @@ export default function Footer() {
           {footerConfig.text} <b>{footerConfig.developer}</b> <br /> &copy;{' '}
           {new Date().getFullYear()}. {footerConfig.copyright}
         </p>
-        <p className="text-secondary text-center text-xs opacity-70">
-          {footerConfig.templateCredit.text}{' '}
-          <a
-            href={footerConfig.templateCredit.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4"
-          >
-            {footerConfig.templateCredit.name}
-          </a>
-        </p>
       </div>
     </Container>
   );
