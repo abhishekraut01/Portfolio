@@ -1,0 +1,46 @@
+---
+title: 'AI Incident Investigator'
+description: 'An autonomous DevSecOps agent that diagnoses production errors and proposes code fixes.'
+image: '/project/ai-incident-investigator.png'
+technologies: ['Python', 'FastAPI', 'LangGraph', 'LangChain', 'ChromaDB', 'RAG', 'Next.js', 'AWS']
+github: 'https://github.com/abhishekraut01'
+live: ''
+timeline: '1 month'
+role: 'AI Engineer'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Getting reliable root causes, not plausible guesses',
+    'Giving the agent the right context from past incidents',
+    'Measuring accuracy instead of eyeballing it',
+  ]
+learnings:
+  [
+    'Agent orchestration and tool calling with LangGraph',
+    'Retrieval over historical incidents with ChromaDB',
+    'Building evaluation benchmarks for LLM systems',
+  ]
+isPublished: true
+---
+
+# AI Incident Investigator
+
+## Overview
+
+When an application throws an error, engineers lose time on triage. This agent reads the error, gathers context, reasons through likely causes and proposes a code-level fix, so engineers start from a diagnosis instead of a stack trace.
+
+## How it works
+
+1. A **webhook** receives the production error and triggers the agent.
+2. A **LangGraph agent** works through 4 tools:
+   - **Semantic search** over a ChromaDB store of past incidents
+   - **Code reading** of the files in the stack trace
+   - **Log analysis** around the failure
+   - **Patch generation** for the proposed fix
+3. A **Next.js dashboard** shows the agent's reasoning step by step.
+
+## Results
+
+- **80% root-cause accuracy** on a seeded production bug benchmark.

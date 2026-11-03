@@ -1,0 +1,50 @@
+---
+title: 'PlaySync'
+description: 'A real-time music streaming platform where everyone in a room hears the same song at the same second.'
+image: '/project/playsync.png'
+technologies: ['TypeScript', 'Turborepo', 'Next.js', 'Node.js', 'Socket.io', 'Redis', 'PostgreSQL', 'Prisma', 'NextAuth', 'Docker', 'GitHub Actions', 'Jest']
+github: ''
+live: 'https://playsync.me'
+timeline: 'Ongoing'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Keeping playback in sync across clients with low drift',
+    'Fan-out of room events at high message rates',
+    'Fast room-state reads under load',
+    'Shipping releases quickly and safely',
+  ]
+learnings:
+  [
+    'Real-time pub/sub design with Socket.io and Redis',
+    'Clock and drift handling for synchronized media',
+    'Schema design for low-latency reads',
+    'CI/CD with automated tests',
+  ]
+isPublished: true
+---
+
+# PlaySync: listen together, in sync
+
+## Overview
+
+PlaySync lets people start a room, share a code and press play. Pause, skip and seek stay in step for everyone in the room, with chat running alongside. It serves **1,000+ registered users**.
+
+## Architecture
+
+- **Monorepo:** Turborepo with a Next.js web app and a Node.js real-time server, all in TypeScript.
+- **Real-time layer:** Socket.io with **Redis pub/sub**, so room events fan out across server instances.
+- **Data:** a normalized PostgreSQL schema through Prisma, with NextAuth for sign-in.
+- **Delivery:** Dockerized services with a GitHub Actions pipeline and Jest unit tests.
+
+## Results
+
+- Sync drift cut from **120ms to 10ms (91% lower)** at **5K+ messages/sec**.
+- Release time cut from **30 minutes to under 5 minutes** with automated CI/CD.
+
+## Live
+
+[playsync.me](https://playsync.me)

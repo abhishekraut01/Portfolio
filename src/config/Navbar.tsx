@@ -1,0 +1,31 @@
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export const navbarConfig = {
+  logo: {
+    src: '/assets/avatar.jpg',
+    alt: 'Abhishek Raut',
+    width: 100,
+    height: 100,
+  },
+  navItems: [
+    {
+      label: 'Work',
+      href: '/work-experience',
+    },
+    {
+      label: 'Projects',
+      href: '/projects',
+    },
+    {
+      label: 'Blogs',
+      href: '/blog',
+    },
+    {
+      label: 'Resume',
+      href: '/resume',
+    },
+  ] as NavItem[],
+};
