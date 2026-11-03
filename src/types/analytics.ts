@@ -27,7 +27,7 @@ export type AnalyticsEventData = {
   /**
    * Fired for any interaction with a specific project. `projectId` keeps each
    * project uniquely identifiable in the dashboard, and `action` distinguishes
-   * how the project was engaged with. New projects are tracked automatically —
+   * how the project was engaged with. New projects are tracked automatically:
    * no per-project code required.
    */
   project_click: {

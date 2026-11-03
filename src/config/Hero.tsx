@@ -22,7 +22,7 @@ export const skillComponents = {
 export const heroConfig = {
   // Personal Information
   name: 'Abhishek',
-  title: 'A Full Stack AI Engineer.',
+  title: 'a Full Stack AI Engineer.',
   avatar: '/assets/avatar.jpg',
 
   // Skills Configuration
