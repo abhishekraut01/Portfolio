@@ -4,7 +4,7 @@ import { githubConfig } from '@/config/Github';
 import { useTheme } from 'next-themes';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Container from '../common/Container';
 import GithubIcon from '../svgs/Github';
@@ -38,6 +38,26 @@ export default function Github() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const { resolvedTheme } = useTheme();
+  const graphRef = useRef<HTMLDivElement>(null);
+  const [blockSize, setBlockSize] = useState(githubConfig.blockSize);
+
+  // Size the squares so the whole year fits the card, like GitHub. On narrow
+  // screens they stop shrinking at a minimum size and the graph becomes a swipe.
+  useEffect(() => {
+    const el = graphRef.current;
+    if (!el) return;
+    const weeks = Math.max(1, Math.ceil(contributions.length / 7) + 1);
+    const update = () => {
+      const fit =
+        Math.floor((el.clientWidth + githubConfig.blockMargin) / weeks) -
+        githubConfig.blockMargin;
+      setBlockSize(Math.min(14, Math.max(9, fit)));
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [contributions.length]);
 
   useEffect(() => {
     async function fetchData() {
@@ -153,11 +173,14 @@ export default function Github() {
         ) : (
           <div className="relative overflow-hidden">
             <div className="bg-background/50 relative rounded-lg border border-dashed border-black/20 p-6 backdrop-blur-sm dark:border-white/10">
-              <div className="w-full overflow-x-auto">
+              <div
+                ref={graphRef}
+                className="no-scrollbar w-full overflow-x-auto"
+              >
                 <ActivityCalendar
                   data={contributions}
-                  blockSize={12}
-                  blockMargin={4}
+                  blockSize={blockSize}
+                  blockMargin={githubConfig.blockMargin}
                   fontSize={githubConfig.fontSize}
                   colorScheme={resolvedTheme === 'dark' ? 'dark' : 'light'}
                   maxLevel={githubConfig.maxLevel}

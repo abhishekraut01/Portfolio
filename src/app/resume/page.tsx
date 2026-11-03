@@ -1,5 +1,5 @@
 import Container from '@/components/common/Container';
-import { Button } from '@/components/ui/button';
+import ResumeViewer from '@/components/resume/ResumeViewer';
 import { Separator } from '@/components/ui/separator';
 import { generateMetadata as getMetadata } from '@/config/Meta';
 import { resumeConfig } from '@/config/Resume';
@@ -32,20 +32,12 @@ export default function ResumePage() {
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
             Full Stack AI Engineer. Experience, projects and skills on one page.
           </p>
-          <Button asChild variant="outline">
-            <a href={resumeConfig.url} download={resumeConfig.downloadName}>
-              Download PDF
-            </a>
-          </Button>
         </div>
         <Separator />
-        <div className="mx-auto max-w-2xl">
-          <iframe
-            src={resumeConfig.url}
-            title="Abhishek Raut resume"
-            className="min-h-screen w-full rounded-md border"
-          ></iframe>
-        </div>
+        <ResumeViewer
+          url={resumeConfig.url}
+          fileName={resumeConfig.downloadName}
+        />
       </div>
     </Container>
   );
