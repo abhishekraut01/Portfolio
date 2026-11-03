@@ -19,7 +19,7 @@ export default function Navbar() {
             }}
           >
             <Image
-              className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
+              className="h-12 w-12 shrink-0 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
               src={navbarConfig.logo.src}
               alt={navbarConfig.logo.alt}
               width={navbarConfig.logo.width}
